@@ -14,6 +14,10 @@ namespace Cynthia.Card
 
         static GwentMap()
         {
+            InitializeCardMap();
+        }
+        public static void InitializeCardMap()
+        {
             CardIdMap = GwentMap.CardMap.Indexed().ToDictionary(x => x.Value.Key, x => x.Key);
             CardIdIndexMap = new string[CardIdMap.Count];
             for (var i = 0; i < CardIdMap.Count; i++)
@@ -2837,7 +2841,7 @@ namespace Cynthia.Card
                     IsDoomed = false,
                     IsCountdown = false,
                     IsDerive = false,
-                    Categories = new Categorie[]{ Categorie.WildHunt,Categorie.Leader},
+                    Categories = new Categorie[]{ Categorie.Leader,Categorie.WildHunt},
                     Flavor = "留点尊严吧，你的结局已然注定。",
                     Info = "生成1个铜色“狂猎”单位。",
                     CardArtsId = "13110100",
@@ -8590,7 +8594,7 @@ namespace Cynthia.Card
                     IsDerive = false,
                     Categories = new Categorie[]{ Categorie.Soldier,Categorie.Dwarf},
                     Flavor = "在玛哈坎崎岖的悬崖峭壁上狩猎可不是件简单事……但矮人们也从不轻易向危险低头。",
-                    Info = "战力改变时（被重置除外），获得3点增益。",
+                    Info = "战力改变时（被重置除外），获得2点增益。",
                     CardArtsId = "20004200",
                 }
             },
@@ -11036,7 +11040,7 @@ namespace Cynthia.Card
                 {
                     CardId ="70023",
                     Name = "齐齐摩战士",
-                    Strength = 7,
+                    Strength = 6,
                     Group = Group.Copper,
                     Faction = Faction.Monsters,
                     CardUseInfo = CardUseInfo.MyRow,
@@ -11277,7 +11281,7 @@ namespace Cynthia.Card
                 {
                     CardId ="70043",
                     Name="弗妮希尔的突击队",
-                    Strength=8,
+                    Strength=6,
                     Group=Group.Copper,
                     Faction = Faction.ScoiaTael,
                     CardUseInfo = CardUseInfo.MyRow,
@@ -11313,7 +11317,7 @@ namespace Cynthia.Card
                 }
             },
             {
-                "70045",//米薇 Mave
+                "70045",//米薇 Meve
                 new GwentCard()
                 {
                     CardId ="70045",
@@ -11326,7 +11330,7 @@ namespace Cynthia.Card
                     IsDoomed = false,
                     IsCountdown = false,
                     IsDerive = false,
-                    Categories = new Categorie[]{ Categorie.Leader},
+                    Categories = new Categorie[]{ Categorie.Leader,Categorie.Lyria},
                     CrewCount = 1,
                     Flavor = "莱里亚女王米薇闷闷不乐地摆弄着项链上的硕大红宝石，美丽而丰满的嘴唇不时扭曲起来。",
                     Info = "使己方半场、手牌、牌库各1个单位获得4点增益。操控。",
@@ -11369,7 +11373,7 @@ namespace Cynthia.Card
                     IsDerive = false,
                     Categories = new Categorie[]{ Categorie.Tactic,Categorie.Special},
                     Flavor = "设埋伏一般都得藏起来。不过……也有例外。",
-                    Info = "复活2个战力高于4点的铜色单位，并对它们各造成4点伤害。",
+                    Info = "复活2个战力高于5点的铜色单位，并对它们各造成4点伤害。",
                     CardArtsId = "d19720000",
                 }
             },
@@ -11379,7 +11383,7 @@ namespace Cynthia.Card
                 {
                     CardId ="70058",
                     Name="洞穴巨魔",
-                    Strength=10,
+                    Strength=9,
                     Group=Group.Copper,
                     Faction = Faction.Monsters,
                     CardUseInfo = CardUseInfo.MyRow,
@@ -11389,7 +11393,7 @@ namespace Cynthia.Card
                     IsDerive = false,
                     Categories = new Categorie[]{ Categorie.Ogroid},
                     Flavor = "巨魔不仅没头脑，饿肚子时还容易不高兴。两样凑在一起，极其危险。",
-                    Info = "回合开始时，使1个战力最高的敌军单位获得2点增益，然后自身获得2点增益。",
+                    Info = "获得4点增益，然后使一个敌方单位获得4点增益",
                     CardArtsId = "d19240000",
                 }
             },
@@ -11606,7 +11610,7 @@ namespace Cynthia.Card
                     Faction = Faction.Monsters,
                     CardUseInfo = CardUseInfo.MyRow,
                     CardType = CardType.Unit,
-                    IsDoomed = false,
+                    IsDoomed = true,
                     IsCountdown = false,
                     IsDerive = false,
                     Categories = new Categorie[]{ Categorie.Vampire},

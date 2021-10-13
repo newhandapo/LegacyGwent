@@ -84,6 +84,7 @@
         "MatchmakingMenu_ReturnButton": "BACK",
         "MatchmakingMenu_SwitchButton": "SWITCH DECK",
         "MatchmakingMenu_CloseButton": "CLOSE",
+        "MatchmakingMenu_BlacklistCheckbox": "Enable blacklist",
         "MatchmakingMenu_CardCount": "Cards:",
         "MatchmakingMenu_LookingForOpponent": "Looking for an opponent...",
         "MatchmakingMenu_CancelButton": "CANCEL",
@@ -93,8 +94,11 @@
         "EditorMenu_CardCount": "Cards:",
         "EditorMenu_EditButton": "EDIT",
         "EditorMenu_RemoveButton": "REMOVE",
+        "EditorMenu_SwitchDeckButton": "Switch Mode",
+        "EditorMenu_BlacklistButton": "Blacklist",
         "EditorMenu_AddDeck": "NEW DECK",
         "EditorMenu_DefaultDeckname": "Default",
+        "EditorMenu_DefaultBlacklistname": "Blacklist(Leader not counted)",
         "EditorMenu_AddDeckFromCodeButton": "Add Deck Code",
         "EditorMenu_GetDeckCodeButton": "DeckCode",
         "EditorMenu_EnterDeckCode": "Enter Deck Code",
@@ -2314,7 +2318,7 @@
         },
         "54012": {
             "Name": "Mahakam Marauder",
-            "Info": "Whenever this Unit is Boosted, Damaged, Strengthened or Weakened, Boost it by 3.",
+            "Info": "Whenever this Unit is Boosted, Damaged, Strengthened or Weakened, Boost it by 2.",
             "Flavor": "在玛哈坎崎岖的悬崖峭壁上狩猎可不是件简单事……但矮人们也从不轻易向危险低头。"
         },
         "54013": {
@@ -2994,12 +2998,12 @@
         },
         "70054": {
             "Name": "Feign Death",
-            "Info": "Resurrect 2 bronze units with power higher than 4 points, and deal 4 damage to each of them.",
+            "Info": "Resurrect 2 bronze units with power higher than 5 points, and deal 4 damage to each of them.",
             "Flavor": ""
         },
         "70058": {
             "Name": "Cave Troll",
-            "Info": "At the beginning of your round, a strongest enemy gains 2 points, and then this card gains 2 points.",
+            "Info": "Gain 4 points, and then boost an enemy by 4 points.",
             "Flavor": ""
         },
         "70059": {

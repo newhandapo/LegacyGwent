@@ -78,6 +78,7 @@ namespace Cynthia.Card.Client
                     _translator.GetText("PopupWindow_DisconnectedTitle"),
                     _translator.GetText("PopupWindow_DisconnectedDesc"),
                     "PopupWindow_OkButton", isOnlyYes: true);
+                Application.Quit();
                 // var messageBox = GameObject.Find("GlobalUI").transform.Find("MessageBoxBg").gameObject.GetComponent<MessageBox>();//.Show("断开连接", "请尝试重新登陆\n注意! 在目前版本中,如果处于对局或匹配时断线,需要重新启动客户端,否则下次游戏开始时会异常卡死。\nNote!\nIn the current version, if you are disconnected when matching or Playing, you need to restart the client, otherwise the next game will start with an abnormal.".Replace("\\n", "\n"), isOnlyYes: true);
                 // messageBox.Buttons.SetActive(true);
                 // messageBox.YesButton.SetActive(true);
@@ -154,6 +155,7 @@ namespace Cynthia.Card.Client
                     var loadedCardMap = JsonConvert.DeserializeObject<Dictionary<string, GwentCard>>(await GetCardMap());
                     Debug.Log($"end loading new card map");
                     GwentMap.CardMap = loadedCardMap;
+                    GwentMap.InitializeCardMap();
                 }
                 // Download locales from the server if:
                 // 1. Locales are not downloaded and the client is outdated
@@ -207,10 +209,10 @@ namespace Cynthia.Card.Client
             return User;
         }
         //开始匹配与停止匹配
-        public Task<bool> MatchOfPassword(string deckId, string password)
+        public Task<bool> NewMatchOfPassword(string deckId, string password, int usingBlacklist)
         {
             Player.Deck = User.Decks.Single(x => x.Id == deckId);
-            return HubConnection.InvokeAsync<bool>("MatchOfPassword", deckId, password);
+            return HubConnection.InvokeAsync<bool>("NewMatchOfPassword", deckId, password, usingBlacklist);
         }
         public Task<bool> StopMatch()
         {
@@ -226,6 +228,8 @@ namespace Cynthia.Card.Client
         public Task<bool> AddDeck(DeckModel deck) => HubConnection.InvokeAsync<bool>("AddDeck", deck);
         public Task<bool> RemoveDeck(string deckId) => HubConnection.InvokeAsync<bool>("RemoveDeck", deckId);
         public Task<bool> ModifyDeck(string deckId, DeckModel deck) => HubConnection.InvokeAsync<bool>("ModifyDeck", deckId, deck);
+        public Task<bool> ModifyBlacklist(BlacklistModel blacklist) => HubConnection.InvokeAsync<bool>("ModifyBlacklist", blacklist);
+
         public Task SendOperation(Task<Operation<int>> operation) => HubConnection.SendAsync("GameOperation", operation);
 
         //开启连接,断开连接
